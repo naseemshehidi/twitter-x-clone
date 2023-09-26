@@ -30,8 +30,6 @@ export const SideDrawer = ({ toggle }: SideDrawerInterface) => {
       setSelected(sideBarListNames.HOME)
     } else if (location.pathname === `/profile/${authUser?.id}`) {
       setSelected(sideBarListNames.PROFILE)
-    } else if (location.pathname === '/settings') {
-      setSelected(sideBarListNames.SETTINGS)
     } else {
       setSelected(sideBarListNames.NOTHING)
     }
@@ -53,11 +51,11 @@ export const SideDrawer = ({ toggle }: SideDrawerInterface) => {
           <h1 className='px-4 pt-2 font-bold'>{authUser?.username}</h1>
           <div className='flex gap-4 px-4 pt-4 text-xs'>
             <div className='flex items-center gap-1'>
-              <span>{followed && followed.length || 0}</span>
+              <span>{(followed && followed.length) || 0}</span>
               <span>Following</span>
             </div>
             <div className='flex items-center gap-1'>
-              <span>{followers && followers.length || 0}</span>
+              <span>{(followers && followers.length) || 0}</span>
               <span>Followers</span>
             </div>
           </div>
@@ -95,18 +93,6 @@ export const SideDrawer = ({ toggle }: SideDrawerInterface) => {
         <hr />
         <div>
           <ul>
-            <li>
-              <SideDrawerItem
-                title={sideBarListNames.SETTINGS}
-                Icon={ICONS.OUTLINE.SETTINGS}
-                SelectedIcon={ICONS.SOLID.SETTINGS}
-                selected={selected === sideBarListNames.SETTINGS}
-                onClick={() => {
-                  setSelected(sideBarListNames.SETTINGS)
-                  navigate('/settings')
-                }}
-              />
-            </li>
             <li>
               <SideDrawerItem
                 title={sideBarListNames.LOGOUT}
