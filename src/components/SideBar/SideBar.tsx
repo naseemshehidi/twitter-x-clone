@@ -49,163 +49,123 @@ export const SideBar = (props: SideBarProps) => {
   }
 
   const navigate = useNavigate()
+
+  const sideBarItems = [
+    {
+      name: sideBarListNames.HOME,
+      icon: ICONS.OUTLINE.HOME,
+      selectedIcon: ICONS.SOLID.HOME,
+      path: '/',
+      unavailable: false,
+    },
+    {
+      name: sideBarListNames.EXPLORE,
+      icon: ICONS.OUTLINE.SEARCH,
+      selectedIcon: ICONS.SOLID.SEARCH,
+      path: '/search',
+      unavailable: true,
+    },
+    {
+      name: sideBarListNames.NOTIFICATIONS,
+      icon: ICONS.OUTLINE.NOTIFICATIONS,
+      selectedIcon: ICONS.SOLID.NOTIFICATIONS,
+      path: '/notifications',
+      unavailable: true,
+    },
+    {
+      name: sideBarListNames.MESSAGES,
+      icon: ICONS.OUTLINE.MAIL,
+      selectedIcon: ICONS.SOLID.MAIL,
+      path: '/messages',
+      unavailable: true,
+    },
+    {
+      name: sideBarListNames.LISTS,
+      icon: ICONS.OUTLINE.LISTS,
+      selectedIcon: ICONS.SOLID.LISTS,
+      path: '/lists',
+      unavailable: true,
+    },
+    {
+      name: sideBarListNames.BOOKMARKS,
+      icon: ICONS.OUTLINE.BOOKMARK,
+      selectedIcon: ICONS.SOLID.BOOKMARK,
+      path: '/bookmarks',
+      unavailable: true,
+    },
+    {
+      name: sideBarListNames.COMMUNITIES,
+      icon: ICONS.OUTLINE.COMMUNITY,
+      selectedIcon: ICONS.SOLID.COMMUNITY,
+      path: '/communities',
+      unavailable: true,
+    },
+    {
+      name: sideBarListNames.VERIFIED,
+      icon: ICONS.OUTLINE.VERIFIED,
+      selectedIcon: ICONS.SOLID.VERIFIED,
+      path: '/verified',
+      unavailable: true,
+    },
+    {
+      name: sideBarListNames.PROFILE,
+      icon: ICONS.OUTLINE.USER,
+      selectedIcon: ICONS.SOLID.USER,
+      path: `/profile/${authUser?.id}`,
+      unavailable: false,
+    },
+    {
+      name: sideBarListNames.MORE,
+      icon: ICONS.OUTLINE.MORE_CIRCLE,
+      selectedIcon: ICONS.SOLID.MORE_CIRCLE,
+      path: '/more',
+      unavailable: true,
+    },
+  ]
+
   return (
     <div className='border-r'>
       <div
-        className='bg-bg-primary md:sticky top-0 h-screen flex flex-col'
+        className='bg-bg-primary md:sticky top-0 h-screen flex flex-col px-4 '
         onClick={(e) => e.stopPropagation()}
       >
-        <div className='w-full flex items-center justify-center pt-6'>
+        <div className='w-full flex items-center justify-center lg:justify-start px-4 pt-6 '>
           <Logo svgStyle='w-6 h-6' />
         </div>
 
-        <div className='pt-4 pb-1 px-2 flex-1'>
-          <ul>
-            <li>
-              <IconLinkItem
-                title={sideBarListNames.HOME}
-                Icon={ICONS.OUTLINE.HOME}
-                SelectedIcon={ICONS.SOLID.HOME}
-                collapsed={collapsed}
-                selected={selected === sideBarListNames.HOME}
-                onClick={() => {
-                  setSelected(sideBarListNames.HOME)
-                  navigate('/')
-                }}
-              />
-            </li>
-            <li>
-              <Unavailable>
-                <IconLinkItem
-                  title={sideBarListNames.EXPLORE}
-                  Icon={ICONS.OUTLINE.SEARCH}
-                  SelectedIcon={ICONS.SOLID.SEARCH}
-                  collapsed={collapsed}
-                  selected={selected === sideBarListNames.EXPLORE}
-                  onClick={() => {
-                    setSelected(sideBarListNames.EXPLORE)
-                    navigate(`/search`)
-                  }}
-                />
-              </Unavailable>
-            </li>
-            <li>
-              <Unavailable>
-                <IconLinkItem
-                  title={sideBarListNames.NOTIFICATIONS}
-                  Icon={ICONS.OUTLINE.NOTIFICATIONS}
-                  SelectedIcon={ICONS.SOLID.NOTIFICATIONS}
-                  collapsed={collapsed}
-                  selected={selected === sideBarListNames.NOTIFICATIONS}
-                  onClick={() => {
-                    setSelected(sideBarListNames.NOTIFICATIONS)
-                    navigate('/notifications')
-                  }}
-                />
-              </Unavailable>
-            </li>
-            <li>
-              <Unavailable>
-                <IconLinkItem
-                  title={sideBarListNames.MESSAGES}
-                  Icon={ICONS.OUTLINE.MAIL}
-                  SelectedIcon={ICONS.OUTLINE.MAIL}
-                  collapsed={collapsed}
-                  selected={selected === sideBarListNames.MESSAGES}
-                  onClick={() => {
-                    setSelected(sideBarListNames.MESSAGES)
-                    navigate('/messages')
-                  }}
-                />
-              </Unavailable>
-            </li>
-            <li>
-              <Unavailable>
-                <IconLinkItem
-                  title={sideBarListNames.LISTS}
-                  Icon={ICONS.OUTLINE.LISTS}
-                  SelectedIcon={ICONS.SOLID.LISTS}
-                  collapsed={collapsed}
-                  selected={selected === sideBarListNames.LISTS}
-                  onClick={() => {
-                    setSelected(sideBarListNames.LISTS)
-                    navigate('/lists')
-                  }}
-                />
-              </Unavailable>
-            </li>
-            <li>
-              <Unavailable>
-                <IconLinkItem
-                  title={sideBarListNames.BOOKMARKS}
-                  Icon={ICONS.OUTLINE.BOOKMARK}
-                  SelectedIcon={ICONS.SOLID.BOOKMARK}
-                  collapsed={collapsed}
-                  selected={selected === sideBarListNames.BOOKMARKS}
-                  onClick={() => {
-                    setSelected(sideBarListNames.BOOKMARKS)
-                    navigate('/bookmarks')
-                  }}
-                />
-              </Unavailable>
-            </li>
-            <li>
-              <Unavailable>
-                <IconLinkItem
-                  title={sideBarListNames.COMMUNITIES}
-                  Icon={ICONS.OUTLINE.COMMUNITY}
-                  SelectedIcon={ICONS.SOLID.COMMUNITY}
-                  collapsed={collapsed}
-                  selected={selected === sideBarListNames.COMMUNITIES}
-                  onClick={() => {
-                    setSelected(sideBarListNames.COMMUNITIES)
-                    navigate('/communities')
-                  }}
-                />
-              </Unavailable>
-            </li>
-            <li>
-              <Unavailable>
-                <IconLinkItem
-                  title={sideBarListNames.VERIFIED}
-                  Icon={ICONS.OUTLINE.VERIFIED}
-                  SelectedIcon={ICONS.SOLID.VERIFIED}
-                  collapsed={collapsed}
-                  selected={selected === sideBarListNames.VERIFIED}
-                  onClick={() => {
-                    setSelected(sideBarListNames.VERIFIED)
-                    navigate('/verified')
-                  }}
-                />
-              </Unavailable>
-            </li>
-            <li>
-              <IconLinkItem
-                title={sideBarListNames.PROFILE}
-                Icon={ICONS.OUTLINE.USER}
-                SelectedIcon={ICONS.SOLID.USER}
-                collapsed={collapsed}
-                selected={selected === sideBarListNames.PROFILE}
-                onClick={() => {
-                  setSelected(sideBarListNames.PROFILE)
-                  navigate(`/profile/${authUser?.id}`)
-                }}
-              />
-            </li>
-            <li>
-              <Unavailable>
-                <IconLinkItem
-                  title={sideBarListNames.MORE}
-                  Icon={ICONS.OUTLINE.MORE_CIRCLE}
-                  SelectedIcon={ICONS.SOLID.MORE_CIRCLE}
-                  collapsed={collapsed}
-                  selected={false}
-                  onClick={() => {
-                    navigate('/more')
-                  }}
-                />
-              </Unavailable>
-            </li>
+        <div className='pt-4 pb-1 flex-1'>
+          <ul className='flex flex-col items-center lg:items-start'>
+            {sideBarItems.map((item) => (
+              <li key={item.name}>
+                {item.unavailable ? (
+                  <Unavailable>
+                    <IconLinkItem
+                      title={item.name}
+                      Icon={item.icon}
+                      SelectedIcon={item.selectedIcon}
+                      collapsed={collapsed}
+                      selected={selected === item.name}
+                      onClick={() => {
+                        setSelected(item.name)
+                        navigate(item.path)
+                      }}
+                    />
+                  </Unavailable>
+                ) : (
+                  <IconLinkItem
+                    title={item.name}
+                    Icon={item.icon}
+                    SelectedIcon={item.selectedIcon}
+                    collapsed={collapsed}
+                    selected={selected === item.name}
+                    onClick={() => {
+                      setSelected(item.name)
+                      navigate(item.path)
+                    }}
+                  />
+                )}
+              </li>
+            ))}
             <li
               className={
                 `w-full flex items-center justify-center pt-2` +
@@ -222,7 +182,7 @@ export const SideBar = (props: SideBarProps) => {
               ) : (
                 <Button
                   variant='primary'
-                  className='w-full'
+                  className='w-[275px] font-bold h-12'
                   onClick={() => navigate('/post/new')}
                 >
                   Post

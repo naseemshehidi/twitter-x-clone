@@ -40,7 +40,7 @@ export const IconLinkItem = ({
       {collapsed || (
         <h3
           className={twMerge(
-            ` text-xl ${selected ? 'text-primary-main font-bold' : 'text-text-primary'}`
+            ` text-lg ${selected ? 'text-primary-main font-bold' : 'text-text-primary'}`
           )}
         >
           {rest.title}

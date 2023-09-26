@@ -97,7 +97,7 @@ export const PostDetails = () => {
 
   return (
     <>
-      <div className='flex flex-col pt-2 px-2 md:px-0 md:pr-2 md:mt-16'>
+      <div className='flex flex-col pt-2 px-2 md:px-0 md:mt-16'>
         <div className='flex gap-2 items-center mb-2 md:px-2'>
           <div className='shrink-0'>
             <Link to={`/profile/${post?.userId}`}>
