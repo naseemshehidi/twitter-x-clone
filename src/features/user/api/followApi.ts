@@ -22,7 +22,7 @@ const dataToTFollow = (data: any, id: string): TFollow => {
   return {
     followedId: data.followedId,
     followerId: data.followerId,
-    createdAt: data.createdAt.toDate().getTime(),
+    createdAt: data.createdAt.seconds * 1000,
     id,
   }
 }
@@ -71,12 +71,12 @@ export const followApi = createApi({
     }),
     getAllFollows: builder.query({
       queryFn: async (_arg, _api, _extraOptions, _baseQuery) => {
-        let ret: TFollow[]
+        let ret: TFollow[] = []
         try {
           const collectionSnap = await getDocs(collection(db, 'follows'))
 
           collectionSnap.docs.forEach((doc) => {
-            ret.push(dataToTFollow(doc, doc.id))
+            ret.push(dataToTFollow(doc.data(), doc.id))
           })
         } catch (err) {
           console.error(err)
@@ -89,7 +89,7 @@ export const followApi = createApi({
     }),
     getFollowersByUser: builder.query<TFollow[], string>({
       queryFn: async (userId, _api, _extraOptions, _baseQuery) => {
-        let ret: TFollow[]
+        let ret: TFollow[] = []
         try {
           const q = query(
             collection(db, 'follows'),
@@ -98,7 +98,7 @@ export const followApi = createApi({
           const collectionSnap = await getDocs(q)
 
           collectionSnap.docs.forEach((doc) => {
-            ret.push(dataToTFollow(doc, doc.id))
+            ret.push(dataToTFollow(doc.data(), doc.id))
           })
         } catch (err) {
           console.error(err)
@@ -111,7 +111,7 @@ export const followApi = createApi({
     }),
     getFollowedByUser: builder.query<TFollow[], string>({
       queryFn: async (userId, _api, _extraOptions, _baseQuery) => {
-        let ret: TFollow[]
+        let ret: TFollow[] = []
         try {
           const q = query(
             collection(db, 'follows'),
@@ -120,7 +120,7 @@ export const followApi = createApi({
           const collectionSnap = await getDocs(q)
 
           collectionSnap.docs.forEach((doc) => {
-            ret.push(dataToTFollow(doc, doc.id))
+            ret.push(dataToTFollow(doc.data(), doc.id))
           })
         } catch (err) {
           console.error(err)

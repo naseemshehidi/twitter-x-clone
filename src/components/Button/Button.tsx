@@ -9,7 +9,7 @@ export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
 export type ButtonVariants = 'primary' | 'secondary'
 
 const variants = {
-  primary: 'bg-primary-main text-white rounded-3xl',
+  primary: 'bg-primary-main text-white',
   secondary: 'bg-bg-primary text-primary-main border border-primary-main',
 }
 
@@ -23,7 +23,7 @@ export const Button = ({
     <button
       {...rest}
       className={twMerge(
-        `px-4 py-2 ${variants[variant]} rounded-3xl `,
+        `px-4 py-2 ${variants[variant]} rounded-full`,
         className
       )}
     >

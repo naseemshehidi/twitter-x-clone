@@ -28,6 +28,12 @@ import {
   PresentationChartBarIcon as PresentationChartBarIconOutline,
   CodeBracketIcon as CodeBracketIconOutline,
   FlagIcon as FlagIconOutline,
+  EllipsisHorizontalIcon as EllipsisHorizontalIconOutline,
+  PhotoIcon as PhotoIconOutline,
+  GifIcon as GifIconOutline,
+  AdjustmentsHorizontalIcon as AdjustmentsHorizontalIconOutline,
+  FaceSmileIcon as FaceSmileIconOutline,
+  MapPinIcon as MapPinIconOutline,
 } from '@heroicons/react/24/outline'
 import {
   Cog6ToothIcon as Cog6ToothIconSolid,
@@ -59,6 +65,12 @@ import {
   PresentationChartBarIcon as PresentationChartBarIconSolid,
   CodeBracketIcon as CodeBracketIconSolid,
   FlagIcon as FlagIconSolid,
+  EllipsisHorizontalIcon as EllipsisHorizontalIconSolid,
+  PhotoIcon as PhotoIconSolid,
+  GifIcon as GifIconSolid,
+  AdjustmentsHorizontalIcon as AdjustmentsHorizontalIconSolid,
+  FaceSmileIcon as FaceSmileIconSolid,
+  MapPinIcon as MapPinIconSolid,
 } from '@heroicons/react/24/solid'
 
 import tailwindConfig from '@/../tailwind.config'
@@ -137,6 +149,16 @@ export const ICONS = {
     STATS: PresentationChartBarIconOutline,
     EMBED: CodeBracketIconOutline,
     REPORT: FlagIconOutline,
+    //
+    MORE_HORIZONTAL: EllipsisHorizontalIconOutline,
+
+    // for new post
+    MEDIA: PhotoIconOutline,
+    GIF: GifIconOutline,
+    POLL: AdjustmentsHorizontalIconOutline,
+    SMILE: FaceSmileIconOutline,
+    SCHEDULE: CalendarDaysIconOutline,
+    LOCATION: MapPinIconOutline,
   },
   SOLID: {
     SETTINGS: Cog6ToothIconSolid,
@@ -169,6 +191,16 @@ export const ICONS = {
     STATS: PresentationChartBarIconSolid,
     EMBED: CodeBracketIconSolid,
     REPORT: FlagIconSolid,
+    //
+    MORE_HORIZONTAL: EllipsisHorizontalIconSolid,
+
+    // for new post
+    MEDIA: PhotoIconSolid,
+    GIF: GifIconSolid,
+    POLL: AdjustmentsHorizontalIconSolid,
+    SMILE: FaceSmileIconSolid,
+    SCHEDULE: CalendarDaysIconSolid,
+    LOCATION: MapPinIconSolid,
   },
 }
 

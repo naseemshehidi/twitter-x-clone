@@ -25,7 +25,6 @@ interface ItemProps extends React.ComponentPropsWithoutRef<'article'> {
 
 export const Item = ({ item, className = '' }: ItemProps) => {
   const { authUser } = useAuth()
-  const [popoverOpen, setPopoverOpen] = useState(false)
 
   const { data: comments } = useGetCommentsByPostIdQuery(item.id)
   const { data: likes, isSuccess: isLikesSuccess } =
@@ -59,11 +58,6 @@ export const Item = ({ item, className = '' }: ItemProps) => {
   }
 
   const navigate = useNavigate()
-
-  //TODO: finish this here
-  const handleMore = () => {
-    setPopoverOpen(!popoverOpen)
-  }
 
   return (
     <>
@@ -122,7 +116,7 @@ export const Item = ({ item, className = '' }: ItemProps) => {
                     Icon: ICONS.OUTLINE.MUTE,
                   },
                   {
-                    title: `BLOCK @${author?.username}`,
+                    title: `Block @${author?.username}`,
                     Icon: ICONS.OUTLINE.BLOCK,
                   },
                   {

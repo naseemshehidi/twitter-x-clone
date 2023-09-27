@@ -124,16 +124,16 @@ export const SideBar = (props: SideBarProps) => {
   ]
 
   return (
-    <div className='border-r'>
+    <div className='flex-1 max-w-[275px] border-r flex justify-end'>
       <div
-        className='bg-bg-primary md:sticky top-0 h-screen flex flex-col px-4 '
+        className='bg-bg-primary md:sticky top-0 h-screen flex flex-col px-4 items-end lg:items-start'
         onClick={(e) => e.stopPropagation()}
       >
-        <div className='w-full flex items-center justify-center lg:justify-start px-4 pt-6 '>
+        <div className=' flex items-center justify-center lg:justify-start px-4 w-[62px] pt-6 mr-[5px]'>
           <Logo svgStyle='w-6 h-6' />
         </div>
 
-        <div className='pt-4 pb-1 flex-1'>
+        <div className='pt-4 pb-1 flex-1 mr-[5px] lg:w-full'>
           <ul className='flex flex-col items-center lg:items-start'>
             {sideBarItems.map((item) => (
               <li key={item.name}>
@@ -168,21 +168,21 @@ export const SideBar = (props: SideBarProps) => {
             ))}
             <li
               className={
-                `w-full flex items-center justify-center pt-2` +
+                `w-full flex items-center justify-center pt-4` +
                 (collapsed ? '' : ' pl-4')
               }
             >
               {collapsed ? (
                 <div className={!collapsed ? ' pr-4' : ''}>
                   <FloatingButton
-                    className='shadow-xl h-[45px] w-[45px]'
+                    className='shadow-xl h-[50px] w-[50px]'
                     onClick={() => navigate('/post/new')}
                   />
                 </div>
               ) : (
                 <Button
                   variant='primary'
-                  className='w-[275px] font-bold h-12'
+                  className='w-full font-bold h-14 '
                   onClick={() => navigate('/post/new')}
                 >
                   Post
@@ -202,7 +202,7 @@ export const SideBar = (props: SideBarProps) => {
               collapsed={collapsed}
             />
           }
-          className='lg:mx-2'
+          className=' lg:w-full'
         >
           <Unavailable className='rounded-none'>
             <PopoverItem title='Add an existing account' />

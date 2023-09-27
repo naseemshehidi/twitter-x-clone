@@ -20,11 +20,11 @@ export const MoreMenu = ({ items }: MoreMenuProps) => {
         }}
       >
         <div className='rounded-full flex justify-center items-center w-[25px] h-[25px]'>
-          <ICONS.OUTLINE.MORE />
+          <ICONS.OUTLINE.MORE_HORIZONTAL />
         </div>
       </Menu.Button>
       <Menu.Items
-        className={`absolute z-[9999] origin-top-right right-0 w-80 bg-white rounded-sm popover-shadow border border-border-secondary outline-border-primary`}
+        className={`absolute z-[9999] origin-top-right right-0 w-[350px] bg-white rounded-sm popover-shadow border border-border-secondary outline-border-primary`}
       >
         {items.map((item) => {
           return (

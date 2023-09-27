@@ -20,8 +20,8 @@ export const FloatingButton = ({
       )}
       Icon={ICONS.OUTLINE.POST}
       SelectedIcon={ICONS.OUTLINE.POST}
-      iconStyle='text-white w-[30px]'
-      selectedIconStyle='text-white h-[30px]'
+      iconStyle='text-white w-[24px]'
+      selectedIconStyle='text-white h-[24px]'
     />
   )
 }

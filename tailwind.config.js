@@ -6,14 +6,14 @@ export default {
       screens: {
         sm: '640px', // Small screens and up
         md: '768px', // Medium screens and up
-        lg: '1024px', // Large screens and up
-        xl: '1280px', // Extra large screens and up
+        lg: '1280px', // Large screens and up
+        xl: '1440px', // Extra large screens and up
       },
       colors: {
         primary: {
-          main: '#f44336',
-          dark: '#aa2e25',
-          light: '#f6685e',
+          main: '#2196f3',
+          dark: '#1769aa',
+          light: '#4dabf5',
         },
         secondary: {
           main: '#9c27b0',

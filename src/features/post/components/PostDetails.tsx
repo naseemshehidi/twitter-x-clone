@@ -172,7 +172,8 @@ export const PostDetails = () => {
               placeholder='Add a comment!'
               className='shrink-1 flex-1 min-w-0 outline-none active:outline-none'
             />
-            <ErrorMessage errors={errors} name='comment' />
+            {/*             <ErrorMessage errors={errors} name='comment' />
+             */}
             <Button
               variant='primary'
               type='submit'

@@ -32,10 +32,10 @@ export const IconLinkItem = ({
     >
       {selected ? (
         <rest.SelectedIcon
-          className={`w-[30px] h-[30px] ${selectedIconStyle}`}
+          className={`w-[25px] h-[25px] ${selectedIconStyle}`}
         />
       ) : (
-        <rest.Icon className={twMerge(`w-[30px] h-[30px] ${iconStyle}`)} />
+        <rest.Icon className={twMerge(`w-[25px] h-[25px] ${iconStyle}`)} />
       )}
       {collapsed || (
         <h3

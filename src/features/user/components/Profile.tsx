@@ -112,7 +112,7 @@ export const Profile = () => {
             itemClassName='pointer-events-auto cursor-pointer pt-4 px-2'
           />
         ) : (
-          'Nothing to see here'
+          <div className='w-full flex justify-center'>Nothing to see here</div>
         )}
       </div>
     </>

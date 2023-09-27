@@ -2,6 +2,7 @@ import { BottomActionDialog } from '@/components/BottomActionDialog'
 import { BottomNavBar } from '@/components/BottomNavBar'
 import { FloatingButton } from '@/components/FloatingButton'
 import { NavBar, NavBarVariants } from '@/components/NavBar'
+import { RightBar } from '@/features/suggestion/components/RightBar'
 import { SideBar } from '@/components/SideBar'
 import { SideDrawer } from '@/components/SideDrawer'
 import { useAuth } from '@/features/user/hooks/useAuth'
@@ -45,7 +46,7 @@ export const Home = () => {
     <>
       {authUser ? (
         <div className='md:fixed md:overflow-auto top-0 bottom-0 left-0 right-0 '>
-          <div className=' min-h-full max-w-6xl flex flex-col md:flex-row md:mx-auto'>
+          <div className=' min-h-full max-w-7xl flex flex-col md:flex-row md:mx-auto'>
             {screenSize === 'SM' && (
               <NavBar
                 onStartClick={toggleSideDrawer}
@@ -54,9 +55,10 @@ export const Home = () => {
               />
             )}
             {screenSize !== 'SM' && <SideBar />}
-            <main className='flex-1 mt-16 mb-16 md:mb-0 md:mt-0 md:border-r'>
+            <main className='max-w-[600px] flex-1 mt-16 mb-16 md:mb-0 md:mt-0 md:border-r'>
               <Outlet />
             </main>
+            {screenSize !== 'SM' && screenSize !== 'MD' && <RightBar />}
 
             {screenSize === 'SM' && <BottomNavBar />}
             {screenSize === 'SM' && showFloatingButton && (
